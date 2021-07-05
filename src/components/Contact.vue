@@ -8,7 +8,7 @@
       <div class="row mb-5">
         <div class="col-12">
           <h3 class="mb-3 text-center">Email Form</h3>
-          <form id="emailForm" class="contact-form" @submit.prevent="sendEmail">
+          <form ref="emailform" id="emailForm" class="contact-form" @submit.prevent="sendEmail">
             <div class="mb-3">
               <label for="nameField" class="form-label">Nama</label>
               <input type="text" class="form-control" name="name" id="nameField" v-model="mail.name" placeholder="Nama lengkap...">
@@ -26,7 +26,7 @@
               <textarea name="message" rows="5" class="form-control" id="messageField" v-model="mail.message" placeholder="Isi pesan..."></textarea>
             </div>
             <div class="d-grid">
-              <input class="btn btn-danger" type="submit" value="Send">
+              <input class="btn btn-danger" type="submit" value="submit">
             </div>
           </form>
         </div>
@@ -54,10 +54,10 @@ export default {
   data() {
     return {
       mail: {
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+        name: this.name,
+        email: this.email,
+        subject: this.subject,
+        message: this.message
       }
     }
   },
@@ -72,14 +72,12 @@ export default {
       emailjs.send('service_dikyf6v', 'template_0rzntq6', objMail, 'user_6baA8HMJvyYoR2mqK3AiO')
       .then((result) => {
         console.log('SUCCESS!', result.status, result.text);
+        this.$refs.emailform.reset();
+        alert('Email berhasil dikirim!');
         }, (error) => {
         console.log('FAILED...', error);
+        alert('Gagal mengirim email!')
       });
-
-      this.name = ''
-      this.email = ''
-      this.subject = ''
-      this.message = ''
     }
   }
 }
