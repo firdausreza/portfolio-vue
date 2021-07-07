@@ -7,7 +7,7 @@
     <div class="card card-body p-5">
       <h3 class="mb-5">Web Development</h3>
       <div class="row">
-        <div class="col-md-4 col-sm-12" v-for="project in projects" :key="project.id">
+        <div class="col-md-4 col-sm-12 my-2" v-for="project in projects" :key="project.id">
           <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
         </div>
       </div>
@@ -24,15 +24,20 @@
         <div class="modal-body">
           <div id="imgCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img :src="require('@/assets/img/pabw/daftarlaporan.png')" class="d-block w-100" alt="...">
+              <template v-for="(item, index) in gallery" :key="item">
+                <div class="carousel-item active" v-if="index === 0">
+                  <img :src="require(`@/assets/img/${item}`)" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" v-else>
+                  <img :src="require(`@/assets/img/${item}`)" class="d-block w-100" alt="...">
+                </div>
+              </template>
+              <!-- <div class="carousel-item">
+                <img :src="require(`@/assets/img/${gallery}`)" class="d-block w-100" alt="...">
               </div>
               <div class="carousel-item">
-                <img :src="require('@/assets/img/pabw/daftarlaporan.png')" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img :src="require('@/assets/img/pabw/daftarlaporan.png')" class="d-block w-100" alt="...">
-              </div>
+                <img :src="require(`@/assets/img/${gallery}`)" class="d-block w-100" alt="...">
+              </div> -->
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#imgCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -61,6 +66,8 @@
 <script>
 import Showcase from './work/Showcase.vue'
 
+// const carousel_item = document.querySelectorAll('.carousel-item');
+
 export default {
   name: 'Work',
   components: {
@@ -72,6 +79,7 @@ export default {
       title: '',
       desc: '',
       projMade: '',
+      gallery: () => [],
       lecture: '',
       showModal: false
     }
@@ -86,6 +94,7 @@ export default {
         link: '',
         projMade: '2019 (Semester 3)',
         mainImage: 'pabw/homepage.png',
+        gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
         lecture: 'Pengembangan Aplikasi Berbasis Web'
       },
       {
@@ -96,6 +105,7 @@ export default {
         link: '',
         projMade: '2020 (Semester 4)',
         mainImage: 'pabw/daftarlaporan.png',
+        gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
         lecture: 'Pengembangan Sistem Informasi'
       },
     ]
@@ -106,7 +116,13 @@ export default {
       this.title = project.title;
       this.desc = project.desc;
       this.projMade = project.projMade;
+      this.gallery = project.gallery;
       this.lecture = project.lecture;
+      // carousel_item.forEach((item, index) => {
+      //   while(index > 0) {
+      //     item.classList.remove('.active')
+      //   }
+      // })
     },
     closeModal() {
       this.showModal = !this.showModal
