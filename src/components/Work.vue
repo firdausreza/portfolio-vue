@@ -19,7 +19,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="cardModal"><strong>{{ title }}</strong></h5>
-          <!-- <button type="button" class="btn-close" @click="closeModal" data-dismiss="modal" aria-label="close"></button> -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div id="imgCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -54,8 +54,8 @@
             <p style="text-align: justify;">
               <strong>{{ title }}</strong> {{ desc }}
             </p>
-            <p>Dibuat pada tahun <strong>{{ projMade }}</strong></p>
-            <p>Mata kuliah : <strong>{{ lecture }}</strong></p>
+            <p>Made in <strong>{{ projMade }}</strong></p>
+            <p>Subject course : <strong>{{ lecture }}</strong></p>
           </div>
         </div>
       </div>
@@ -101,13 +101,24 @@ export default {
         id: 2,
         title: 'EzTourism',
         category: 'Web Development',
-        desc: 'adalah platform yang menyediakan jasa pemesanan oleh-oleh khas Jogja dan menyediakan pelayanan jasa sewa tour guide wisata bagi para wisatawan yang hendak berkeliling menikmati keindahan “kota gudeg” ini untuk meminimalisir kendala kebutuhan dalam berwisata',
+        desc: 'adalah platform jasa pemesanan oleh-oleh khas Jogja dan menyediakan pelayanan jasa sewa tour guide wisata bagi para wisatawan yang hendak berkeliling menikmati keindahan “kota gudeg” ini untuk meminimalisir kendala kebutuhan dalam berwisata.',
+        link: '',
+        projMade: '2020 (Semester 4)',
+        mainImage: 'PSI/ez1.png',
+        gallery: ['PSI/ez1.png', 'PSI/ez2.png', 'PSI/ez3.png'],
+        lecture: 'Pengembangan Sistem Informasi'
+      },
+      {
+        id: 3,
+        title: 'EzTourism',
+        category: 'Web Development',
+        desc: 'adalah platform jasa pemesanan oleh-oleh khas Jogja dan menyediakan pelayanan jasa sewa tour guide wisata bagi para wisatawan yang hendak berkeliling menikmati keindahan “kota gudeg” ini untuk meminimalisir kendala kebutuhan dalam berwisata.',
         link: '',
         projMade: '2020 (Semester 4)',
         mainImage: 'pabw/daftarlaporan.png',
         gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
         lecture: 'Pengembangan Sistem Informasi'
-      },
+      }
     ]
   }, 
   methods: {
@@ -118,11 +129,6 @@ export default {
       this.projMade = project.projMade;
       this.gallery = project.gallery;
       this.lecture = project.lecture;
-      // carousel_item.forEach((item, index) => {
-      //   while(index > 0) {
-      //     item.classList.remove('.active')
-      //   }
-      // })
     },
     closeModal() {
       this.showModal = !this.showModal
