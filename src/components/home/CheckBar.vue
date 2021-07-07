@@ -1,5 +1,5 @@
 <template>
-  <div class="col-6">
+  <div class="col-12">
     <div class="fw-bold fs-5">
       {{ name }}
       <span>
