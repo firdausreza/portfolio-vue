@@ -6,6 +6,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  background-image: url('../Network.webm');
+  background-attachment: fixed;
 }
 
 .foto {

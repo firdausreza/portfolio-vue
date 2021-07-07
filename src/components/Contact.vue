@@ -7,10 +7,10 @@
     <div class="card card-body p-5">
       <div class="row mb-5">
         <div class="col-12">
-          <h3 class="mb-3 text-center">Email Form</h3>
+          <h3 class="mb-3 text-center">Email me!</h3>
           <form ref="emailform" id="emailForm" class="contact-form" @submit.prevent="sendEmail">
             <div class="mb-3">
-              <label for="nameField" class="form-label">Nama</label>
+              <label for="nameField" class="form-label">Name</label>
               <input type="text" class="form-control" name="name" id="nameField" v-model="mail.name" placeholder="Nama lengkap...">
             </div>
             <div class="mb-3">
@@ -22,11 +22,11 @@
               <input type="text" class="form-control" name="subject" id="subjectField" v-model="mail.subject" placeholder="Email subject...">
             </div>
             <div class="mb-3">
-              <label for="messageField" class="form-label">Pesan</label>
+              <label for="messageField" class="form-label">Message</label>
               <textarea name="message" rows="5" class="form-control" id="messageField" v-model="mail.message" placeholder="Isi pesan..."></textarea>
             </div>
             <div class="d-grid">
-              <input class="btn btn-danger" type="submit" value="submit">
+              <input class="btn btn-danger" type="submit" value="Send">
             </div>
           </form>
         </div>
