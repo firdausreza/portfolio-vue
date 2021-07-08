@@ -112,6 +112,17 @@ export default {
         mainImage: 'pabw/daftarlaporan.png',
         gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
         lecture: 'React JS Tutorial by Net Ninja (Shaun Pelling)'
+      },
+      {
+        id: 3,
+        title: 'Dojo Blog',
+        category: 'Web Development',
+        desc: 'A simple CRD (CREATE - READ - DELETE) blog web apps built using ReactJS, a ReactJS tutorial by Net Ninja (Shaun Pelling)',
+        link: 'https://dojo-blog-react.vercel.app/',
+        projMade: 'March 2021',
+        mainImage: 'pabw/daftarlaporan.png',
+        gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
+        lecture: 'React JS Tutorial by Net Ninja (Shaun Pelling)'
       }
     ]
   }, 
