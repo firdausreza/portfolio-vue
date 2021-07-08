@@ -1,5 +1,10 @@
 # portfolio
 
+## LIVE DEMO 
+```
+https://azerlyy-portfolio-vue.vercel.app/
+```
+
 ## Project setup
 ```
 npm install
