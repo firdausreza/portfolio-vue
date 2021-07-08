@@ -25,10 +25,10 @@
           <div id="imgCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <template v-for="(item, index) in gallery" :key="item">
-                <div class="carousel-item active" v-if="index === 0">
+                <div class="carousel-item active" data-bs-interval="3000" v-if="index === 0">
                   <img :src="require(`@/assets/img/${item}`)" class="d-block w-100" alt="...">
                 </div>
-                <div class="carousel-item" v-else>
+                <div class="carousel-item" data-bs-interval="3000" v-else>
                   <img :src="require(`@/assets/img/${item}`)" class="d-block w-100" alt="...">
                 </div>
               </template>
@@ -85,7 +85,7 @@ export default {
         title: 'JagaJogja',
         category: 'Web Development',
         desc: 'adalah portal laporan keamanan, kebersihan, dan fasilitas umum untuk mewujudkan Jogja Smart city.',
-        link: '',
+        link: 'https://www.google.com/',
         projMade: '2019 (Semester 3)',
         mainImage: 'pabw/homepage.png',
         gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
@@ -96,7 +96,7 @@ export default {
         title: 'EzTourism',
         category: 'Web Development',
         desc: 'adalah platform jasa pemesanan oleh-oleh khas Jogja dan menyediakan pelayanan jasa sewa tour guide wisata bagi para wisatawan yang hendak berkeliling menikmati keindahan “kota gudeg” ini untuk meminimalisir kendala kebutuhan dalam berwisata.',
-        link: '',
+        link: 'https://www.google.com/',
         projMade: '2020 (Semester 4)',
         mainImage: 'psi/ez1.png',
         gallery: ['psi/ez1.png', 'psi/ez2.png', 'psi/ez3.png'],
@@ -104,14 +104,14 @@ export default {
       },
       {
         id: 3,
-        title: 'EzTourism',
+        title: 'Dojo Blog',
         category: 'Web Development',
-        desc: 'adalah platform jasa pemesanan oleh-oleh khas Jogja dan menyediakan pelayanan jasa sewa tour guide wisata bagi para wisatawan yang hendak berkeliling menikmati keindahan “kota gudeg” ini untuk meminimalisir kendala kebutuhan dalam berwisata.',
-        link: '',
-        projMade: '2020 (Semester 4)',
+        desc: 'A simple CRD (CREATE - READ - DELETE) blog web apps built using ReactJS, a ReactJS tutorial by Net Ninja (Shaun Pelling)',
+        link: 'https://dojo-blog-react.vercel.app/',
+        projMade: 'March 2021',
         mainImage: 'pabw/daftarlaporan.png',
         gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
-        lecture: 'Pengembangan Sistem Informasi'
+        lecture: 'React JS Tutorial by Net Ninja (Shaun Pelling)'
       }
     ]
   }, 
