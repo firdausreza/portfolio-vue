@@ -32,12 +32,6 @@
                   <img :src="require(`@/assets/img/${item}`)" class="d-block w-100" alt="...">
                 </div>
               </template>
-              <!-- <div class="carousel-item">
-                <img :src="require(`@/assets/img/${gallery}`)" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img :src="require(`@/assets/img/${gallery}`)" class="d-block w-100" alt="...">
-              </div> -->
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#imgCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -104,8 +98,8 @@ export default {
         desc: 'adalah platform jasa pemesanan oleh-oleh khas Jogja dan menyediakan pelayanan jasa sewa tour guide wisata bagi para wisatawan yang hendak berkeliling menikmati keindahan “kota gudeg” ini untuk meminimalisir kendala kebutuhan dalam berwisata.',
         link: '',
         projMade: '2020 (Semester 4)',
-        mainImage: 'PSI/ez1.png',
-        gallery: ['PSI/ez1.png', 'PSI/ez2.png', 'PSI/ez3.png'],
+        mainImage: 'psi/ez1.png',
+        gallery: ['psi/ez1.png', 'psi/ez2.png', 'psi/ez3.png'],
         lecture: 'Pengembangan Sistem Informasi'
       },
       {
