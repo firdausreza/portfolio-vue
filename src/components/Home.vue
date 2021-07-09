@@ -19,7 +19,7 @@
 
       <div class="row">
         <ProgressBar name="HTML" width="90%" icon="fab fa-html5" />
-        <ProgressBar name="CSS" width="60%" icon="fab fa-css3-alt" />
+        <ProgressBar name="CSS" width="70%" icon="fab fa-css3-alt" />
       </div>
 
       <div class="row">
