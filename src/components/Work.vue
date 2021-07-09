@@ -5,11 +5,33 @@
     </div>
 
     <div class="card card-body p-5">
-      <h3 class="mb-5">Web Development</h3>
+      <div class="row mb-3">
+        <CategoryLabel @toggle-category="toggleCategory" catName="All" :total="allCounter" />
+        <CategoryLabel @toggle-category="toggleCategory" catName="Web Development" :total="webCounter" />
+        <CategoryLabel @toggle-category="toggleCategory" catName="Mobile Apps Development" :total="mobileCounter" />
+        <CategoryLabel @toggle-category="toggleCategory" catName="Game Development" :total="gameCounter" />
+      </div>
       <div class="row">
-        <div class="col-md-4 col-sm-12 my-2" v-for="project in projects" :key="project.id">
-          <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
-        </div>
+        <template v-if="projCategory === 'Web Development'">
+          <div class="col-md-4 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+            <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
+          </div>
+        </template>
+        <template v-else-if="projCategory === 'Mobile Apps Development'">
+          <div class="col-md-4 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+            <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
+          </div>
+        </template>
+        <template v-else-if="projCategory === 'Game Development'">
+          <div class="col-md-4 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+            <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
+          </div>
+        </template>
+        <template v-else-if="projCategory === 'All'">
+          <div class="col-md-4 col-sm-12 my-2" v-for="project in projects" :key="project.id">
+            <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
+          </div>
+        </template>
       </div>
     </div>
   </div>
@@ -59,13 +81,15 @@
 
 <script>
 import Showcase from './work/Showcase.vue'
+import CategoryLabel from './work/CategoryLabel.vue'
 
 // const carousel_item = document.querySelectorAll('.carousel-item');
 
 export default {
   name: 'Work',
   components: {
-    Showcase
+    Showcase,
+    CategoryLabel
   },
   data() {
     return {
@@ -75,7 +99,9 @@ export default {
       projMade: '',
       gallery: () => [],
       lecture: '',
-      showModal: false
+      showModal: false,
+      projCatArr: [],
+      projCategory: 'All'
     }
   },
   created() {
@@ -83,9 +109,9 @@ export default {
       {
         id: 1,
         title: 'JagaJogja',
-        category: 'Web Development',
+        category: 'web',
         desc: 'adalah portal laporan keamanan, kebersihan, dan fasilitas umum untuk mewujudkan Jogja Smart city.',
-        link: 'https://www.google.com/',
+        link: '',
         projMade: '2019 (Semester 3)',
         mainImage: 'pabw/homepage.png',
         gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
@@ -94,9 +120,9 @@ export default {
       {
         id: 2,
         title: 'EzTourism',
-        category: 'Web Development',
+        category: 'web',
         desc: 'adalah platform jasa pemesanan oleh-oleh khas Jogja dan menyediakan pelayanan jasa sewa tour guide wisata bagi para wisatawan yang hendak berkeliling menikmati keindahan “kota gudeg” ini untuk meminimalisir kendala kebutuhan dalam berwisata.',
-        link: 'https://www.google.com/',
+        link: '',
         projMade: '2020 (Semester 4)',
         mainImage: 'psi/ez1.png',
         gallery: ['psi/ez1.png', 'psi/ez2.png', 'psi/ez3.png'],
@@ -105,19 +131,19 @@ export default {
       {
         id: 3,
         title: 'Dojo Blog',
-        category: 'Web Development',
+        category: 'web',
         desc: 'A simple CRD (CREATE - READ - DELETE) blog web apps built using ReactJS, a ReactJS tutorial by Net Ninja (Shaun Pelling)',
         link: 'https://dojo-blog-react.vercel.app/',
         projMade: 'March 2021',
-        mainImage: 'pabw/daftarlaporan.png',
-        gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
+        mainImage: 'dojo-blog/dojo1.png',
+        gallery: ['dojo-blog/dojo1.png', 'dojo-blog/dojo2.png', 'dojo-blog/dojo3.png'],
         lecture: 'React JS Tutorial by Net Ninja (Shaun Pelling)'
       },
       {
-        id: 3,
+        id: 4,
         title: 'Dojo Blog',
-        category: 'Web Development',
-        desc: 'A simple CRD (CREATE - READ - DELETE) blog web apps built using ReactJS, a ReactJS tutorial by Net Ninja (Shaun Pelling)',
+        category: 'mobile',
+        desc: 'is a simple CRD (CREATE - READ - DELETE) blog web apps built using ReactJS, a ReactJS tutorial by Net Ninja (Shaun Pelling)',
         link: 'https://dojo-blog-react.vercel.app/',
         projMade: 'March 2021',
         mainImage: 'pabw/daftarlaporan.png',
@@ -126,6 +152,20 @@ export default {
       }
     ]
   }, 
+  computed: {
+    webCounter: function() {
+      return this.projects.filter((item) => item.category === 'web').length;
+    },
+    mobileCounter: function() {
+      return this.projects.filter((item) => item.category === 'mobile').length;
+    },
+    gameCounter: function () {
+      return this.projects.filter((item) => item.category === 'game').length;
+    },
+    allCounter: function () {
+      return this.projects.length;
+    }
+  },
   methods: {
     toggleModal(project) {
       this.showModal = !this.showModal;
@@ -137,6 +177,20 @@ export default {
     },
     closeModal() {
       this.showModal = !this.showModal
+    },
+    toggleCategory(term) {
+      if (term.toLowerCase() === 'web development') {
+        this.projCategory = term;
+        this.projCatArr = this.projects.filter((item) => item.category === 'web');
+      } else if (term.toLowerCase() === 'mobile apps development') {
+        this.projCategory = term;
+        this.projCatArr = this.projects.filter((item) => item.category === 'mobile');
+      } else if (term.toLowerCase() === 'game development') {
+        this.projCategory = term;
+        this.projCatArr = this.projects.filter((item) => item.category === 'game');
+      } else if (term.toLowerCase() === 'all') {
+        this.projCategory = term;
+      }
     }
   }
 }

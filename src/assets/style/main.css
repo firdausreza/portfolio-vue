@@ -97,3 +97,14 @@ p.about-text {
   text-decoration: none;
   cursor: pointer;
 }
+
+#work .row .category-label {
+  border-radius: 10px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  margin-right: 15px;
+  cursor: pointer;
+}
