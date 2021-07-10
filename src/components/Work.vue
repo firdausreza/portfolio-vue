@@ -166,7 +166,7 @@ export default {
         title: 'Task Tracker App',
         category: 'web',
         desc: 'a single web page task tracker web apps',
-        link: '',
+        link: 'https://vue-task-tracker-iota.vercel.app/',
         projMade: 'May 2021',
         mainImage: 'vue-task/task1.png',
         gallery: ['vue-task/task1.png'],
