@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-3 col-sm-12 my-2">
+  <div class="col-md-6 col-sm-12 my-2">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title fw-bold">{{ name }}</h5>

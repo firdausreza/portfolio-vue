@@ -13,22 +13,22 @@
       </div>
       <div class="row">
         <template v-if="projCategory === 'Web Development'">
-          <div class="col-md-4 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'Mobile Apps Development'">
-          <div class="col-md-4 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'Game Development'">
-          <div class="col-md-4 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'All'">
-          <div class="col-md-4 col-sm-12 my-2" v-for="project in projects" :key="project.id">
+          <div class="col-lg-4 col-md-6 col-sm-12 my-2" v-for="project in projects" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
@@ -70,6 +70,12 @@
             <p style="text-align: justify;">
               <strong>{{ title }}</strong> {{ desc }}
             </p>
+            <p>
+              Tools : 
+              <template v-for="item in tools" :key="item">
+                <strong>{{ item }}, </strong>
+              </template>
+            </p>
             <p>Made in <strong>{{ projMade }}</strong></p>
             <p>Subject course : <strong>{{ lecture }}</strong></p>
           </div>
@@ -97,7 +103,8 @@ export default {
       title: '',
       desc: '',
       projMade: '',
-      gallery: () => [],
+      gallery: [],
+      tools: [],
       lecture: '',
       showModal: false,
       projCatArr: [],
@@ -115,6 +122,7 @@ export default {
         projMade: '2019 (Semester 3)',
         mainImage: 'pabw/homepage.png',
         gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
+        tools: ['HTML', 'CSS', 'Bootstrap 4', 'Laravel Framework'],
         lecture: 'Pengembangan Aplikasi Berbasis Web'
       },
       {
@@ -126,6 +134,7 @@ export default {
         projMade: '2020 (Semester 4)',
         mainImage: 'psi/ez1.png',
         gallery: ['psi/ez1.png', 'psi/ez2.png', 'psi/ez3.png'],
+        tools: ['HTML', 'CSS', 'Bootstrap 4', 'Laravel Framework'],
         lecture: 'Pengembangan Sistem Informasi'
       },
       {
@@ -137,18 +146,32 @@ export default {
         projMade: 'March 2021',
         mainImage: 'dojo-blog/dojo1.png',
         gallery: ['dojo-blog/dojo1.png', 'dojo-blog/dojo2.png', 'dojo-blog/dojo3.png'],
+        tools: ['HTML', 'CSS', 'JavaScript','React JS'],
         lecture: 'React JS Tutorial by Net Ninja (Shaun Pelling)'
       },
       {
         id: 4,
-        title: 'Dojo Blog',
-        category: 'mobile',
-        desc: 'is a simple CRD (CREATE - READ - DELETE) blog web apps built using ReactJS, a ReactJS tutorial by Net Ninja (Shaun Pelling)',
-        link: 'https://dojo-blog-react.vercel.app/',
-        projMade: 'March 2021',
-        mainImage: 'pabw/daftarlaporan.png',
-        gallery: ['pabw/daftarlaporan.png', 'pabw/input laporan.png', 'pabw/tentang.png'],
-        lecture: 'React JS Tutorial by Net Ninja (Shaun Pelling)'
+        title: 'Single Web Author Page',
+        category: 'web',
+        desc: 'a single web page for my submission in Dicoding Courses',
+        link: '',
+        projMade: 'August 2020',
+        mainImage: 'basic-web/web1.png',
+        gallery: ['basic-web/web1.png'],
+        tools: ['HTML', 'CSS'],
+        lecture: 'Basic Web Programming (Dasar Pemrograman Web) by Dicoding Indonesia'
+      },
+      {
+        id: 5,
+        title: 'Task Tracker App',
+        category: 'web',
+        desc: 'a single web page task tracker web apps',
+        link: '',
+        projMade: 'May 2021',
+        mainImage: 'vue-task/task1.png',
+        gallery: ['vue-task/task1.png'],
+        tools: ['HTML', 'CSS', 'JavaScript', 'Vue JS'],
+        lecture: 'Vue Crash Course by Traversy Media (Brad Traversy)'
       }
     ]
   }, 
@@ -173,6 +196,7 @@ export default {
       this.desc = project.desc;
       this.projMade = project.projMade;
       this.gallery = project.gallery;
+      this.tools = project.tools;
       this.lecture = project.lecture;
     },
     closeModal() {
