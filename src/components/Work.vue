@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <div>
+          <div class="w-100">
             <p style="text-align: justify;">
               <strong>{{ title }}</strong> {{ desc }}
             </p>
@@ -88,8 +88,6 @@
 <script>
 import Showcase from './work/Showcase.vue'
 import CategoryLabel from './work/CategoryLabel.vue'
-
-// const carousel_item = document.querySelectorAll('.carousel-item');
 
 export default {
   name: 'Work',
@@ -198,9 +196,6 @@ export default {
       this.gallery = project.gallery;
       this.tools = project.tools;
       this.lecture = project.lecture;
-    },
-    closeModal() {
-      this.showModal = !this.showModal
     },
     toggleCategory(term) {
       if (term.toLowerCase() === 'web development') {
