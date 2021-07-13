@@ -1,21 +1,21 @@
 <template>
   <template v-if="catName.toLowerCase() === 'web development'">
-    <div @click="$emit('toggle-category', catName)" class="category-label bg-info text-white my-2">
+    <div @click="$emit('toggle-category', catName)" class="category-label bg-dark text-white my-2">
       <p style="margin: 0;">{{ catName }} (<strong>{{ total }}</strong>)</p>
     </div>
   </template>
   <template v-else-if="catName.toLowerCase() === 'mobile apps development'">
-    <div @click="$emit('toggle-category', catName)" class="category-label bg-danger text-white my-2">
+    <div @click="$emit('toggle-category', catName)" class="category-label bg-dark text-white my-2">
       <p style="margin: 0;">{{ catName }} (<strong>{{ total }}</strong>)</p>
     </div>
   </template>
   <template v-else-if="catName.toLowerCase() === 'game development'">
-    <div @click="$emit('toggle-category', catName)" class="category-label bg-success text-white my-2">
+    <div @click="$emit('toggle-category', catName)" class="category-label bg-dark text-white my-2">
       <p style="margin: 0;">{{ catName }} (<strong>{{ total }}</strong>)</p>
     </div>
   </template>
   <template v-else>
-    <div @click="$emit('toggle-category', catName)" class="category-label bg-primary text-white my-2">
+    <div @click="$emit('toggle-category', catName)" class="category-label bg-dark text-white my-2">
       <p style="margin: 0;">{{ catName }} (<strong>{{ total }}</strong>)</p>
     </div>
   </template>
