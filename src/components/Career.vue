@@ -137,7 +137,6 @@ export default {
   },
   methods: {
     toggleImgModal(item) {
-      console.log(item)
       this.showModal = !this.showModal
       this.imgName = item.name
       this.imgSrc = item.src
