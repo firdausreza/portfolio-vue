@@ -170,7 +170,19 @@ export default {
         gallery: ['vue-task/task1.png'],
         tools: ['HTML', 'CSS', 'JavaScript', 'Vue JS'],
         lecture: 'Vue Crash Course by Traversy Media (Brad Traversy)'
-      }
+      },
+      {
+        id: 6,
+        title: 'Escape from Area 51',
+        category: 'game',
+        desc: 'an algorithm and problem solving game',
+        link: 'https://igooose.itch.io/escape-from-area-51',
+        projMade: 'December 2020',
+        mainImage: 'efa51/game1.png',
+        gallery: ['efa51/game1.png', 'efa51/game2.png', 'efa51/game3.png'],
+        tools: ['Unity Engine', 'Blender', 'Unity WebGL'],
+        lecture: 'Gim Serius'
+      },
     ]
   }, 
   computed: {
