@@ -11,24 +11,24 @@
         <CategoryLabel @toggle-category="toggleCategory" catName="Mobile Apps Development" :total="mobileCounter" />
         <CategoryLabel @toggle-category="toggleCategory" catName="Game Development" :total="gameCounter" />
       </div>
-      <div class="row">
+      <div class="row gy-2">
         <template v-if="projCategory === 'Web Development'">
-          <div class="col-lg-4 col-md-6 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+          <div class="col-lg-4 col-md-6 col-sm-12" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'Mobile Apps Development'">
-          <div class="col-lg-4 col-md-6 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+          <div class="col-lg-4 col-md-6 col-sm-12" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'Game Development'">
-          <div class="col-lg-4 col-md-6 col-sm-12 my-2" v-for="project in projCatArr" :key="project.id">
+          <div class="col-lg-4 col-md-6 col-sm-12" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'All'">
-          <div class="col-lg-4 col-md-6 col-sm-12 my-2" v-for="project in projects" :key="project.id">
+          <div class="col-lg-4 col-md-6 col-sm-12" v-for="project in projects" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
@@ -183,6 +183,18 @@ export default {
         tools: ['Unity Engine', 'Blender', 'Unity WebGL'],
         lecture: 'Gim Serius'
       },
+      {
+        id: 7,
+        title: 'Bookshelf Apps',
+        category: 'web',
+        desc: 'a simple book management apps for my dicoding submission',
+        link: 'https://bookshelf-apps.vercel.app/',
+        projMade: 'Jun 2021',
+        mainImage: 'bookshelf/book1.png',
+        gallery: ['bookshelf/book1.png'],
+        tools: ['HTML', 'CSS', 'JavaScript'],
+        lecture: 'Basic Front-End Web Courses (Belajar Membuat Front-End Web Pemula) by Dicoding Indonesia'
+      }
     ]
   }, 
   computed: {
