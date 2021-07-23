@@ -112,3 +112,30 @@ p.about-text {
 #work .row .category-label:hover {
   transform: scale(1.08);
 }
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1rem;
+}
+
+.masonry-grid .masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+#cerfImg {
+  width: 300px;
+  height: 200px;
+}

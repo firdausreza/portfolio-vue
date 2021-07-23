@@ -47,9 +47,9 @@
 
       <h3 class="mb-3">Certificate and Achievement</h3>
 
-      <div class="row">
+      <div class="row gy-2">
         <template v-for="item in certificates" :key="item.id">
-          <div class="col-lg-3 col-md-3 col-sm-12 m-3">
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
             <img id="cerfImg" :src="require(`@/assets/img/${item.src}`)" :alt="item.name" width="300" height="200" @click="toggleImgModal(item)" data-bs-toggle="modal" data-bs-target="#imgModal">
           </div>
         </template>

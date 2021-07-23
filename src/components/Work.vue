@@ -11,24 +11,24 @@
         <CategoryLabel @toggle-category="toggleCategory" catName="Mobile Apps Development" :total="mobileCounter" />
         <CategoryLabel @toggle-category="toggleCategory" catName="Game Development" :total="gameCounter" />
       </div>
-      <div class="row gy-2">
+      <div class="masonry-grid">
         <template v-if="projCategory === 'Web Development'">
-          <div class="col-lg-4 col-md-6 col-sm-12" v-for="project in projCatArr" :key="project.id">
+          <div class="masonry-item" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'Mobile Apps Development'">
-          <div class="col-lg-4 col-md-6 col-sm-12" v-for="project in projCatArr" :key="project.id">
+          <div class="masonry-item" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'Game Development'">
-          <div class="col-lg-4 col-md-6 col-sm-12" v-for="project in projCatArr" :key="project.id">
+          <div class="masonry-item" v-for="project in projCatArr" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
         <template v-else-if="projCategory === 'All'">
-          <div class="col-lg-4 col-md-6 col-sm-12" v-for="project in projects" :key="project.id">
+          <div class="masonry-item" v-for="project in projects" :key="project.id">
             <Showcase :project="project" @toggle-modal="toggleModal(project)"/>
           </div>
         </template>
@@ -137,18 +137,6 @@ export default {
       },
       {
         id: 3,
-        title: 'Dojo Blog',
-        category: 'web',
-        desc: 'A simple CRD (CREATE - READ - DELETE) blog web apps built using ReactJS, a ReactJS tutorial by Net Ninja (Shaun Pelling)',
-        link: 'https://dojo-blog-react.vercel.app/',
-        projMade: 'March 2021',
-        mainImage: 'dojo-blog/dojo1.png',
-        gallery: ['dojo-blog/dojo1.png', 'dojo-blog/dojo2.png', 'dojo-blog/dojo3.png'],
-        tools: ['HTML', 'CSS', 'JavaScript','React JS'],
-        lecture: 'React JS Tutorial by Net Ninja (Shaun Pelling)'
-      },
-      {
-        id: 4,
         title: 'Single Web Author Page',
         category: 'web',
         desc: 'a single web page for my submission in Dicoding Courses',
@@ -160,19 +148,7 @@ export default {
         lecture: 'Basic Web Programming (Dasar Pemrograman Web) by Dicoding Indonesia'
       },
       {
-        id: 5,
-        title: 'Task Tracker App',
-        category: 'web',
-        desc: 'a single web page task tracker web apps',
-        link: 'https://vue-task-tracker-iota.vercel.app/',
-        projMade: 'May 2021',
-        mainImage: 'vue-task/task1.png',
-        gallery: ['vue-task/task1.png'],
-        tools: ['HTML', 'CSS', 'JavaScript', 'Vue JS'],
-        lecture: 'Vue Crash Course by Traversy Media (Brad Traversy)'
-      },
-      {
-        id: 6,
+        id: 4,
         title: 'Escape from Area 51',
         category: 'game',
         desc: 'an algorithm and problem solving game',
@@ -182,18 +158,6 @@ export default {
         gallery: ['efa51/game1.png', 'efa51/game2.png', 'efa51/game3.png'],
         tools: ['Unity Engine', 'Blender', 'Unity WebGL'],
         lecture: 'Gim Serius'
-      },
-      {
-        id: 7,
-        title: 'Bookshelf Apps',
-        category: 'web',
-        desc: 'a simple book management apps for my dicoding submission',
-        link: 'https://bookshelf-apps.vercel.app/',
-        projMade: 'Jun 2021',
-        mainImage: 'bookshelf/book1.png',
-        gallery: ['bookshelf/book1.png'],
-        tools: ['HTML', 'CSS', 'JavaScript'],
-        lecture: 'Basic Front-End Web Courses (Belajar Membuat Front-End Web Pemula) by Dicoding Indonesia'
       }
     ]
   }, 
