@@ -158,6 +158,18 @@ export default {
         gallery: ['efa51/game1.png', 'efa51/game2.png', 'efa51/game3.png'],
         tools: ['Unity Engine', 'Blender', 'Unity WebGL'],
         lecture: 'Gim Serius'
+      },
+      {
+        id: 5,
+        title: 'Ongkirin',
+        category: 'web',
+        desc: 'merupakan sebuah aplikasi berbasis web (mobile friendly) yang berguna untuk mengorganisir dan menentukan harga dari permintaan pengiriman dengan memberikan sebuah link kepada pelanggannya',
+        link: 'https://ongkirin.vercel.app/',
+        projMade: 'July 2021 (Ongoing Project)',
+        mainImage: 'ongkirin/ongkirin1.png',
+        gallery: ['ongkirin/ongkirin1.png', 'ongkirin/ongkirin2.png', 'ongkirin/ongkirin3.png'],
+        tools: ['Vue JS', 'Nuxt.js', 'Tailwind CSS'],
+        lecture: 'none'
       }
     ]
   }, 
